@@ -1,0 +1,14 @@
+{% extends 'learning_logs/base.html' %} {% block content %}
+Topic: {{ topic }}
+
+Entries:
+
+{% for entry in entries %}
+{{ entry.date_added|date:'M d, Y H:i' }}
+
+{{ entry.text|linebreaks }}
+
+{% empty %}
+There are no entries for this topic yet.
+{% endfor %}
+{% endblock content %}
